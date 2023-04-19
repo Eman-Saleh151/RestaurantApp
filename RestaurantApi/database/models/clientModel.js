@@ -53,22 +53,11 @@ const clientSchema =mongoose.Schema(
                 
             }
         },
-         addresses:[
-            {
-                addrName:{
-                    type:String,
-                    trim:true,
-                    required:true,
-                    lowercase:true
-                }, 
-                addrDetails:{
-                    type:String,
-                    trim:true,
-                    required:true,
-                    lowercase:true
-                }
-            }
-        ],
+         addresses:{
+            type:String,
+            trim:true,
+            required:true
+         },
         tokens:[
             {
                 token:{

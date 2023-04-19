@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "27368a03-d020-42f1-88a5-dd9698147a5b",
+		"name": "1-RestaurantApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19468236"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\":\"ahmed\",\r\n    \"lname\":\"saleh\",\r\n    \"email\":\"ahmed@eee.eee\",\r\n    \"password\":\"ahmed123\",\r\n    \"phone\":\"01001457144\",\r\n    \"isAdmin\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}admin/addAdmin",
+							"host": [
+								"{{URL}}admin"
+							],
+							"path": [
+								"addAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"eman@eee.eee\",\r\n     \"password\": \"eman123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}admin//loginAdmin",
+							"host": [
+								"{{URL}}admin"
+							],
+							"path": [
+								"",
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNmMGNlMTAyMjNhM2UyY2FmZDYxOGYiLCJpYXQiOjE2ODE4NTM4MzB9.bWaSOWlNVf5Y-uJkGjS6-ae5PcUP1SuhvJfAYvcx08U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}admin//logoutAdmin",
+							"host": [
+								"{{URL}}admin"
+							],
+							"path": [
+								"",
+								"logoutAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show All Admins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}admin//showAllAdmins",
+							"host": [
+								"{{URL}}admin"
+							],
+							"path": [
+								"",
+								"showAllAdmins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show Single Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}admin/showSingleAdmin/643f0d380223a3e2cafd6191",
+							"host": [
+								"{{URL}}admin"
+							],
+							"path": [
+								"showSingleAdmin",
+								"643f0d380223a3e2cafd6191"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"fname\": \"aya\",\r\n            \"lname\": \"salmohamedeh\",\r\n            \"age\": 33,\r\n            \"email\": \"aya@aya.vvv\",\r\n            \"password\": \"lala1234\",\r\n            \"gender\": \"female\",\r\n            \"phone\":\"01112563333\",\r\n            \"addresses\":\"cairo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}client/register",
+							"host": [
+								"{{URL}}client"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lala@lala.lala\",\r\n     \"password\": \"lala1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}client/loginClient",
+							"host": [
+								"{{URL}}client"
+							],
+							"path": [
+								"loginClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNmMTJkOTU5NWRlZmI3ZmE1YWUyZTYiLCJpYXQiOjE2ODE4NTUzNTF9.LWscAAh62RPU9rNzhpLFovCSY6Fw9DHw-xTXZzouQpw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}client/logoutClient",
+							"host": [
+								"{{URL}}client"
+							],
+							"path": [
+								"logoutClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show All Cleints",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{clientToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}client/showAllCleints",
+							"host": [
+								"{{URL}}client"
+							],
+							"path": [
+								"showAllCleints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show Single cleint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}client/showSinglecleint/643f12d9595defb7fa5ae2e6",
+							"host": [
+								"{{URL}}client"
+							],
+							"path": [
+								"showSinglecleint",
+								"643f12d9595defb7fa5ae2e6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meal",
+			"item": [
+				{
+					"name": "Add Meal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/New/OneDrive/Desktop/imagesDB/drinks/Lemonade Slushie with Frozen Watermelon - Celebrating Sweets.jpg"
+								},
+								{
+									"key": "mealName",
+									"value": "Lemonade",
+									"type": "text"
+								},
+								{
+									"key": "mealIngredients",
+									"value": "sugar- vanilla- chia",
+									"type": "text"
+								},
+								{
+									"key": "mealPrice",
+									"value": "30$",
+									"type": "text"
+								},
+								{
+									"key": "mealCategory",
+									"value": "drinks",
+									"type": "text"
+								},
+								{
+									"key": "isAvailable",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}meal/addMeal",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"addMeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}meal/delete/64361e49444b55b99fbb4e83",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"delete",
+								"64361e49444b55b99fbb4e83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n\"mealPrice\":\"150$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}meal/edit/64361e68444b55b99fbb4e85",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"edit",
+								"64361e68444b55b99fbb4e85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{clientToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}meal/order/64361ea2444b55b99fbb4e89",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"order",
+								"64361ea2444b55b99fbb4e89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meals Breakfast",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/showMealsBreakfast",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showMealsBreakfast"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meals Lunch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal//showMealsLunch",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"",
+								"showMealsLunch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meals Dinner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/showMealsDinner",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showMealsDinner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meals Desserts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/showMealsDesserts",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showMealsDesserts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meals Drinks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/showMealsDrinks",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showMealsDrinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Un Avaliable Meal",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}meal/unAvaliableMeal/64361e8b444b55b99fbb4e87",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"unAvaliableMeal",
+								"64361e8b444b55b99fbb4e87"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show All Meals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/showAllMeals",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showAllMeals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Availability of Meal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}meal/checkAvailability/64361e8b444b55b99fbb4e87",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"checkAvailability",
+								"64361e8b444b55b99fbb4e87"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show Single Meal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URL}}meal/showSingleMeals/64361e49444b55b99fbb4e83",
+							"host": [
+								"{{URL}}meal"
+							],
+							"path": [
+								"showSingleMeals",
+								"64361e49444b55b99fbb4e83"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "table",
+			"item": [
+				{
+					"name": "addTable",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tableNumber\":4,\r\n    \"personTableNumber\":10,\r\n    \"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}table/addTable",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"addTable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tableNumber\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}table/edit/643f15c0595defb7fa5ae312",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"edit",
+								"643f15c0595defb7fa5ae312"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}table/delete/643f15c0595defb7fa5ae312",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"delete",
+								"643f15c0595defb7fa5ae312"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booktable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}table/bookTable/643627e027d7e8e60311b317",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"bookTable",
+								"643627e027d7e8e60311b317"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show All Tables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}table/showAllTables",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"showAllTables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unAvaliable Table",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{adminToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}table/unAvaliableTable/643f15ad595defb7fa5ae30d",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"unAvaliableTable",
+								"643f15ad595defb7fa5ae30d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Availability",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}table/checkAvailability/643f1585595defb7fa5ae303",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"checkAvailability",
+								"643f1585595defb7fa5ae303"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Resevation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{clientToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}table/makeResevation",
+							"host": [
+								"{{URL}}table"
+							],
+							"path": [
+								"makeResevation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:5000/api/",
+			"type": "string"
+		},
+		{
+			"key": "adminToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNmMGNlMTAyMjNhM2UyY2FmZDYxOGYiLCJpYXQiOjE2ODE4NTQwMjl9.VWxMFdBUDw54OQvmjy8X-mDuEDft2V_tbvX4a8vx_Ew",
+			"type": "string"
+		},
+		{
+			"key": "clientToken",
+			"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNmMTJkOTU5NWRlZmI3ZmE1YWUyZTYiLCJpYXQiOjE2ODE4NTU0MDh9.k73DyisrzkIclg3UE8gb66RnCx2Lp3o3jWw4G0VEYzE",
+			"type": "string"
+		}
+	]
+}

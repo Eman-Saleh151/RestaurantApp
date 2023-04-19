@@ -17,9 +17,6 @@ const tableSchema =mongoose.Schema(
             type:Boolean,
             required:true,
             default:true
-        },
-        image:{
-            type:String
         }
     }
     ,

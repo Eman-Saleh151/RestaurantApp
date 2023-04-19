@@ -5,6 +5,18 @@ const jwt = require("jsonwebtoken")
 
 const adminSchema =mongoose.Schema(
     {
+        fname:{
+            type:String,
+            trim:true,
+            required:true,
+            lowercase:true
+        },
+        lname:{
+            type:String,
+            trim:true,
+            required:true,
+            lowercase:true
+        },
         email:{
             type:String,
             trim:true,
@@ -26,8 +38,9 @@ const adminSchema =mongoose.Schema(
             required: true,
             default: true
         },
-        image:{
-            type:String
+        phone:{
+            type:String,
+            trim:true
         },
         tokens:[
             {

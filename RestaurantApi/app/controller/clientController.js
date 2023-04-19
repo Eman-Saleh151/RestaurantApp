@@ -13,6 +13,27 @@ class client {
             Helper.resHandler(res , 500 , false , e.message , "Error in Adding client")
         }
     }
+    //showSingleClient
+    static showSinglecleint = async(req,res)=>{
+        try{
+
+            const clientData = await clientModel.findById(req.params.id)
+            Helper.resHandler(res,200,true,clientData," profile Cleint")
+        }
+        catch(e){
+            Helper.resHandler(res , 500 ,false,e.message,"Error on showing data")
+        }
+    }
+    //showAll
+    static showAllCleints = async(req,res)=>{
+        try{
+            const clientData = await clientModel.find()
+            Helper.resHandler(res,200,true,clientData," clients are Fetched")
+        }
+        catch(e){
+            Helper.resHandler(res , 500 ,false,e.message,"Error on showing data")
+        }
+    }
     //login 
     static LoginClient = async(req,res)=>{
         try{

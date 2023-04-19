@@ -6,6 +6,8 @@ class Meal {
     static addMeal = async(req,res)=>{
         try{
             const mealData = new mealModel(req.body)
+            const ext = Helper.fileHandler(req)
+            mealData.image = `${process.env.AppURL}${req.file.filename}.${ext}`
             await mealData.save()
             Helper.resHandler(res , 200 , true , mealData , "meal is Added")
         }
