@@ -1,0 +1,16 @@
+<app-d-navbar></app-d-navbar>
+<form my-4 #tableform="ngForm"  (ngSubmit)="handleSubmit(tableform)" >
+
+    <div>
+    <input type="number" placeholder="tableNumber"
+    [(ngModel)]="model.tableNumber" name="tableNumber" #mealName="ngModel" >
+    </div>
+   
+    <div>
+    <input type="number" placeholder="personTableNumber"
+    [(ngModel)]="model.personTableNumber" name="personTableNumber" #mealIngredients="ngModel">
+    </div>
+
+  <button class="btn btn-danger">Add table</button>
+</form>
+

@@ -1,0 +1,35 @@
+<h1>edit meal</h1>
+<form my-4 #editMealform="ngForm"  (ngSubmit)="handleSubmit(editMealform)" >
+    <div>
+    <input type="text" 
+    [(ngModel)]="model.mealName" name="mealName" #mealName="ngModel" [value]="singleMeal?.mealName">
+    </div>
+   
+    <div>
+    <input type="text" 
+    [(ngModel)]="model.mealIngredients" name="mealIngredients" #mealIngredients="ngModel" [value]="singleMeal?.mealIngredients">
+    </div>
+   
+    <div>
+    <input type="text" 
+    [(ngModel)]="model.mealPrice" name="mealPrice" #mealPrice="ngModel" [value]="singleMeal?.mealPrice">
+    </div>
+   
+    <div>
+    <input type="text" 
+    [(ngModel)]="model.mealCategory" name="mealCategory" #mealCategory ="ngModel" [value]="singleMeal?.mealCategory">
+    </div>
+   
+   <div class="mb-3">
+    <input class="form-control" type="file" id="formFileMultiple" multiple 
+     (change)="handleChange($event)">
+  </div>
+  <button class="btn btn-danger" >Edit Meal</button>
+</form>
+
+<div class="alert alert-success" *ngIf="divedit">
+    <h2>this meal is editted </h2>
+</div>
+<div class="alert alert-danger" *ngIf="diverr">
+    <h2> error in editting data </h2>
+</div>

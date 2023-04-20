@@ -1,0 +1,10 @@
+
+  <ul class="nav nav-pills ">
+    <li class="nav-item">
+      <a class="nav-link"  routerLink="/DashBoard/Dash-meals" routerLinkActive="text-red">meals</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/DashBoard/Dash-tables" routerLinkActive="text-red">tables</a>
+    </li>
+    <button class="btn btn-danger text-white" *ngIf="clientserv.isLogin" (click)="handleClick()">log out</button>
+  </ul>

@@ -1,0 +1,51 @@
+<h3 class="my-4">login page</h3>
+
+<div class="alert alert-danger" *ngIf="msgError">
+    {{msgError}}
+</div>
+
+<form #loginform="ngForm" (ngSubmit)="handleSubmit(loginform)">
+    <div class="row gy-4 mt-4">
+
+        <!-- email----------------------------------------------------------- -->
+        <div class="col-12 col-6">
+            <input type="email" placeholder="email" class="form-control"
+            [(ngModel)]="model.email" name="email" #email="ngModel" required email>
+        </div>
+        <!-- divERR-Email -->
+        <div class="alert alert-danger" *ngIf="loginform.submitted && email.invalid ">
+            <div *ngIf="email.errors?.['required']">Email is required</div>
+            <div *ngIf="email.errors?.['email']">Invalid Email</div>
+        </div>
+        
+
+
+
+
+
+        <!-- pass---------------------------------------------------------------------- -->
+        <div class="col-12 col-6">
+            <input type="password" placeholder="password" class="form-control"
+            [(ngModel)]="model.password" name="password" #password="ngModel" required minlength="5"
+            (input)="msgError = null"> 
+        </div>
+        <!-- divERR-pass -->
+        <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || loginform.submitted )">
+            <div *ngIf="password.errors?.['required']">password is required</div>
+            <div *ngIf="password.errors?.['minlength']">min length = 5</div>
+        </div>
+
+
+
+
+
+        <!-- button----------------------------------------------------------------------------- -->
+        <div class="col-12 col-6">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+        <div *ngIf="clientserv.registerFlag">
+              <span> creat new profile ? </span>
+              <button class="btn btn-danger text-white" routerLink="/login/register" type="button">register</button>
+        </div>
+    </div>
+</form>

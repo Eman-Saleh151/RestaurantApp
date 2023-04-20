@@ -1,0 +1,28 @@
+<app-d-navbar></app-d-navbar>
+<form my-4 #mealform="ngForm"  (ngSubmit)="handleSubmit(mealform)" >
+        <div>
+        <input type="text" placeholder="mealName"
+        [(ngModel)]="model.mealName" name="mealName" #mealName="ngModel" >
+        </div>
+       
+        <div>
+        <input type="text" placeholder="mealIngredients"
+        [(ngModel)]="model.mealIngredients" name="mealIngredients" #mealIngredients="ngModel">
+        </div>
+       
+        <div>
+        <input type="text" placeholder="mealPrice"
+        [(ngModel)]="model.mealPrice" name="mealPrice" #mealPrice="ngModel">
+        </div>
+       
+        <div>
+        <input type="text" placeholder="mealCategory"
+        [(ngModel)]="model.mealCategory" name="mealCategory" #mealCategory ="ngModel">
+        </div>
+       
+       <div class="mb-3">
+        <input class="form-control" type="file" id="formFileMultiple" multiple placeholder="mealImage"
+         (change)="handleChange($event)">
+      </div>
+      <button class="btn btn-danger">Add Meal</button>
+</form>

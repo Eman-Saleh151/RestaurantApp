@@ -1,0 +1,22 @@
+
+<div class="row justify-content-center my-5"  >
+    <div class="card text-bg-light mb-3" style="max-width: 18rem;" *ngFor="let table of tables ; let evenIndix = even ">
+        <div class="card-header">Table Number : {{table.tableNumber}}</div>
+        <div class="card-body">
+          <p class="card-text">Number Person  :{{table.personTableNumber}}</p>
+          <button class="btn btn-primary" (click)="handlebook(table._id)">Book This Table</button>
+        </div>
+      </div>
+</div>
+<div class="my-2">
+    <div class="alert alert-danger" *ngIf="bookErrFlag">
+        <h3> ooops u should sign in</h3>
+        <button class="btn btn-danger" (click)="handleloginclick()">login</button>
+    </div>
+    <div class="alert alert-danger" *ngIf="tableNotFoundDoneFlag">
+        <h3> Sorry is Table is Already Booked </h3>
+    </div>
+    <div class="alert alert-success" *ngIf="bookDoneFlag">
+        <h3>table booked done</h3>
+    </div>
+</div>

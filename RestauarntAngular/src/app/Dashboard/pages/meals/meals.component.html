@@ -1,0 +1,28 @@
+<app-d-navbar></app-d-navbar>
+<button class="btn btn-danger" (click)=" handleadd()">Add Meal</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th>MealName</th>
+        <th>mealPrice</th>
+        <th>mealCategory</th>
+        <th>mealIngredients</th>
+        <th>isAvailable</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meal of meals">
+        <th>{{meal.mealName}}</th>
+        <td>{{meal.mealPrice}}</td>
+        <td>{{meal.mealCategory}}</td>
+        <td>{{meal.mealIngredients}}</td>
+        <td>{{meal.isAvailable}}</td>
+        <td>
+            <button class="btn btn-warning mx-2" (click)="handleEdit(meal._id) ">edit</button>
+            <button class="btn btn-danger mx-2" (click)="handelDelet(meal._id)">delete</button>
+            <button class="btn btn-success mx-2"(click)="handleUnav(meal._id)">unavailable</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

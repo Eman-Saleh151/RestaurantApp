@@ -1,0 +1,32 @@
+
+    <div class="my-4 d-flex justify-content-around">
+        <button (click)="handleMealsBreakfast()" class="btn btn-outline-primary" >BreakFast</button>
+        <button (click)="handleMealsLaunch()"  class="btn btn-outline-primary">Launch</button>
+        <button (click)="handleMealsDinner()" class="btn btn-outline-primary" >Dinner</button>
+        <button (click)="handleMealsDesserts()" class="btn btn-outline-primary" >Desserts</button>
+        <button (click)="handleMealsDrinks()"  class="btn btn-outline-primary">Drinks</button>
+    </div>
+
+    <div class="row justify-content-center"  >      
+            <div class="card mb-3" style="max-width: 540px;"  *ngFor="let meal of meals ; let evenIndix = even ">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img [src]="meal.image" class="img-fluid rounded-start" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <p class="card-text  text-end">{{meal.mealPrice}}</p>
+                      <h5 class="card-title">{{meal.mealName}}</h5>
+                      <p class="card-text">{{meal.mealIngredients}}</p>
+                      <button class="btn btn-primary" routerLink="/menu/{{meal._id}}">Show This Meal</button>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+    </div>
+    
+
+
+
+    
+    
